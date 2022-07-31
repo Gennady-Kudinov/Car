@@ -1,0 +1,51 @@
+<h1>NEW CLIENT</h1>
+
+<%= form_for :client, data: { turbo: false }, url: '/clients' do |f| %>
+
+  <p>
+    <%= f.label :number_auto%>
+    <%= f.text_field :number_auto %>
+  </p>
+
+  <p>
+    <%= f.label :brand_auto%>
+    <%= f.text_field :brand_auto %>
+  </p>
+
+  <p>
+    <%= f.label :model_auto%>
+    <%= f.text_field :model_auto %>
+  </p>
+
+  <p>
+    <%= f.label :km%>
+    <%= f.text_field :km %>
+  </p>
+
+  <p>
+    <%= f.label :vin%>
+    <%= f.text_field :vin %>
+  </p>
+
+  <p>
+    <%= f.label :phone%>
+    <%= f.text_field :phone %>
+  </p>
+
+  <p>
+    <%= f.label :price%>
+    <%= f.text_field :price %>
+  </p>
+
+  <p>
+    <%= f.label :date%>
+    <%= f.text_field :date %>
+  </p>
+
+  <p>
+    <%= f.submit%>
+  </p>
+
+
+
+  <% end %>
