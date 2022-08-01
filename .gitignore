@@ -36,3 +36,7 @@
 
 db/migrate/20220731143337_create_clients.rb
 .ruby-version
+app/.DS_Store
+.DS_Store
+public/IMG_1.jpg
+public/location.jpg
