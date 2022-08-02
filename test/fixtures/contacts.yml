@@ -2,8 +2,8 @@
 
 one:
   email: MyString
-  massage: MyText
+  message: MyText
 
 two:
   email: MyString
-  massage: MyText
+  message: MyText

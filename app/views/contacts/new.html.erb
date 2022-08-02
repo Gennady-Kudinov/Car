@@ -1,1 +1,22 @@
 <h1>Contacts new</h1>
+
+<!- обязательно добaвлять  data: { turbo: false } - так как изменились Релься, -->
+<!- иначе не будет отображаться результат на странице -->
+
+<%= form_for :contact, data: { turbo: false }, url: contacts_path do |f| %>
+
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :message %>
+    <%= f.text_area :message %>
+  </p>
+
+  <p>
+    <%= f.submit 'Send message' %>
+  </p>
+
+<% end %>

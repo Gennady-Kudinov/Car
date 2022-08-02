@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_01_173908) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_02_050822) do
   create_table "clients", force: :cascade do |t|
     t.string "number_auto"
     t.string "brand_auto"
@@ -24,11 +24,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_01_173908) do
     t.date "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["number_auto"], name: "index_clients_on_number_auto"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "contacts", force: :cascade do |t|
     t.string "email"
-    t.text "massage"
+    t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
