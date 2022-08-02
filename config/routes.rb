@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   resource :contacts, only: [:new, :create] # Resource определенный метод который принимает символ :Contacts
   # а дальше идет хешь,  ONLY это ключ хеша, а значение этого Хеша Массив С символами :new, :create методов
   # которые хотим использовать :new, :create
-  resources :clients
+  resources :clients, only: [:new, :create]
 
 end

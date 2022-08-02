@@ -1,6 +1,6 @@
 <h1>NEW CLIENT</h1>
 
-<%= form_for :client, data: { turbo: false }, url: '/clients' do |f| %>
+<%= form_for :client, data: { turbo: false }, url: clients_path do |f| %>
 
   <p>
     <%= f.label :number_auto%>
