@@ -4,7 +4,11 @@ class ContactsController < ApplicationController
 
   def create # Атрибуты емайл и контакт запарещенные, необходимо их разрешить
     @contact = Contact.new(contact_params)
-    @contact.save
+    if @contact.valid?
+       @contact.save
+    else
+      render action: 'new'
+    end
   end
 
   # все что ниже Приватного метода не имеет доступа из вне.
