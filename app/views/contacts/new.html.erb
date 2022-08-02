@@ -5,6 +5,17 @@
 
 <%= form_for :contact, data: { turbo: false }, url: contacts_path do |f| %>
 
+  <!-  # вывод сообщения об ошибке -->
+  <% if @contact && @contact.errors.any? %>
+      <p>
+        <ul>
+        <%= @contact.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </p>
+  <% end %>
+
   <p>
     <%= f.label :email %>
     <%= f.text_field :email %>
