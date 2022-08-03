@@ -1,0 +1,10 @@
+{
+  "name": "app",
+  "private": "true",
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "license": "^1.0.3",
+    "licenses": "0.0.20"
+  },
+  "license": "0BSD"
+}

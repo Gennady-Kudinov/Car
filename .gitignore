@@ -37,5 +37,13 @@
 .ruby-version
 app/.DS_Store
 .DS_Store
-public/IMG_1.jpg
-public/location.jpg
+app/assets/images/IMG_1.jpg
+app/assets/images/location.jpg
+bootstrap/
+node_modules/.bin/license
+node_modules/.bin/license.cmd
+node_modules/.bin/license.ps1
+node_modules/.bin/semver
+node_modules/.bin/semver.cmd
+node_modules/.bin/semver.ps1
+node_modules/.bin/sshpk-conv

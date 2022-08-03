@@ -1,0 +1,12 @@
+//noinspection CssUnknownTarget
+@import 'bootstrap/scss/bootstrap';
+//noinspection CssUnknownTarget
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+.field_with_errors input {
+  border-color: red;
+}
+
+.field_with_errors textarea {
+  border-color: red;
+}
