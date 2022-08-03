@@ -4,7 +4,17 @@
   "dependencies": {
     "bootstrap": "^5.2.0",
     "license": "^1.0.3",
-    "licenses": "0.0.20"
+    "licenses": "0.0.20",
+    "sass": "^1.54.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "@rails/ujs": "^7.0.3-1",
+    "turbolinks": "^5.2.0"
   },
-  "license": "0BSD"
+  "license": "0BSD",
+
+  "scripts": {
+    "build": "webpack.config.js",
+    "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss"
+  }
 }

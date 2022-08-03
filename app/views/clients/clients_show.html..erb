@@ -1,0 +1,34 @@
+<h4>Страница пользователя для автосервиса</h4>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+
+    <th>Марка а/м</th>
+    <th>Модель а/м</th>
+    <th>Гос Номер а/м</th>
+    <th>Пробег</th>
+    <th>Идентификатор</th>
+    <th>Неисправность<th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+
+  <% @client.each do |row| %>
+    <tr <%= "style='background-color: ; color: grey;'" if row == @client.first %>>
+
+      <td><%= row['brand_auto'] %></td>
+      <td><%= row['model_auto'] %></td>
+      <td><%= row['number_auto'] %></td>
+      <td><%= row['km'] %></td>
+      <td><%= row['swid'] %></td>
+      <td><%= row['deffect'] %></td>
+
+    </tr>
+
+  <% end %>
+  </tbody>
+
+</table>
