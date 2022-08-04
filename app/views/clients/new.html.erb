@@ -8,9 +8,9 @@
 
     <div class="bg-light border ms-auto"><%= f.label :number_auto %><br><%= f.text_field :number_auto %></div>
 
-    <div class="bg-light border ms-auto"><%= f.label :brand_auto%><br><%= f.text_field :brand_auto %></div>
+    <div class="bg-light border ms-auto"><%= f.label :brand_auto %><br><%= f.collection_select :brand_auto_id, Client.order(:brand_auto), :id, :brand_auto %></div>
 
-    <div class="bg-light border ms-auto"><%= f.label :model_auto%><br><%= f.text_field :model_auto %></div>
+    <div class="bg-light border ms-auto"><%= f.label :model_auto %><br><%= f.text_field :model_auto %></div>
 
     <div class="bg-light border ms-auto"><%= f.label :km%><br><%= f.text_field :km %></div>
 
@@ -20,11 +20,11 @@
 
     <div class="hstack gap-3">
 
-      <div class="bg-light border ms-auto"><%= f.label :deffect%><br><%= f.text_area :deffect %></div>
+      <div class="bg-light border ms-auto"><%= f.label :deffect%><br><%= f.text_area :deffect, size: "60x10" %></div>
 
       <div class="bg-light border ms-auto"><%= f.label :swid%><br><%= f.text_field :swid %></div>
 
-      <div class="bg-light border ms-auto"><%= f.label :phone%><br><%= f.text_field :phone %></div>
+      <div class="bg-light border ms-auto"><%= f.telephone_field :phone%><br><%= f.text_field :phone %></div>
 
     </div>
 
@@ -37,7 +37,7 @@
 
   <p>
     <%= f.label :date%>
-    <%= f.text_field :date %>
+    <%= f.datetime_local_field :date %>
   </p>
 
   <p>
