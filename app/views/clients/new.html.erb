@@ -1,49 +1,34 @@
-<h1>NEW CLIENT</h1>
+
+
 
 <%= form_for :client, data: { turbo: false }, url: clients_path do |f| %>
 
-  <p>
-    <div class="col-md-3 position-relative">
-    <%= f.label :number_auto %>
-    <%= f.text_field :number_auto %>
+
+  <div class="hstack gap-3">
+
+    <div class="bg-light border ms-auto"><%= f.label :number_auto %><br><%= f.text_field :number_auto %></div>
+
+    <div class="bg-light border ms-auto"><%= f.label :brand_auto%><br><%= f.text_field :brand_auto %></div>
+
+    <div class="bg-light border ms-auto"><%= f.label :model_auto%><br><%= f.text_field :model_auto %></div>
+
+    <div class="bg-light border ms-auto"><%= f.label :km%><br><%= f.text_field :km %></div>
+
+    <div class="bg-light border ms-auto"><%= f.label :vin%><br><%= f.text_field :vin %></div>
+
+  </div>
+
+    <div class="hstack gap-3">
+
+      <div class="bg-light border ms-auto"><%= f.label :deffect%><br><%= f.text_area :deffect %></div>
+
+      <div class="bg-light border ms-auto"><%= f.label :swid%><br><%= f.text_field :swid %></div>
+
+      <div class="bg-light border ms-auto"><%= f.label :phone%><br><%= f.text_field :phone %></div>
+
     </div>
 
-  </p>
 
-  <p>
-    <%= f.label :brand_auto%>
-    <%= f.text_field :brand_auto %>
-  </p>
-
-  <p>
-    <%= f.label :model_auto%>
-    <%= f.text_field :model_auto %>
-  </p>
-
-  <p>
-    <%= f.label :km%>
-    <%= f.text_field :km %>
-  </p>
-
-  <p>
-    <%= f.label :vin%>
-    <%= f.text_field :vin %>
-  </p>
-
-  <p>
-    <%= f.label :deffect%>
-    <%= f.text_area :deffect %>
-  </p>
-
-  <p>
-    <%= f.label :swid%>
-    <%= f.text_field :swid %>
-  </p>
-
-  <p>
-    <%= f.label :phone%>
-    <%= f.text_field :phone %>
-  </p>
 
   <p>
     <%= f.label :price%>
@@ -59,8 +44,12 @@
     <%= f.submit%>
   </p>
 
+
+
   <% end %>
 
+
+<br><br><br><br><br><br><br><br><br>
 
 <h3>Учет ремонтируемых а/м в Автосервисе Морозова 2 Б</h3>
 

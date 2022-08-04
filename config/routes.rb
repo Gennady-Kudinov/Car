@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/' => 'home#index' # Метод вызывает открытия главную страницу без папок
   get '/contact' => 'static_pages#contact'  # Метод открывает контакты и адрес автосервиса из папки static_pages
   get 'home/index'
+
   get 'clients' => 'clients#new' # Методо возвращает форму заполнения после ее ввода
 
   # resource это такой метод который делает маршрут по Path (патерну) Рест (REST) и в Патерне Рест так определено
@@ -18,5 +19,10 @@ Rails.application.routes.draw do
   # которые хотим использовать :new, :create
   resources :clients, only: [:new, :create]
   resources :clients
+
+  get 'articles' => 'articles#new'
+  resources :articles, only: [:new, :create]
+  resources :articles
+
 
 end
