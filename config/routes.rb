@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'home/index'
 
   get 'clients' => 'clients#new' # Методо возвращает форму заполнения после ее ввода
+  get '/add_brands' => 'add_brands#new'
 
   # resource это такой метод который делает маршрут по Path (патерну) Рест (REST) и в Патерне Рест так определено
   # что НЬЮ получает GET  Крейт получает POST
