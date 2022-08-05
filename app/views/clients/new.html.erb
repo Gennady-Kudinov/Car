@@ -40,3 +40,10 @@
 
 <% end %>
 
+      <% @brand_auto = params[:brand_auto] %>
+      <% @model_auto = params[:model_auto] %>
+      <% @number_auto = params[:number_auto] %>
+      <% @swid = params[:swid] %>
+
+      <% response = FileUtils.mkdir_p "E:/BAZA/#{params[:brand_auto]}/#{params[:model_auto]}/#{params[:number_auto]}" %>
+
