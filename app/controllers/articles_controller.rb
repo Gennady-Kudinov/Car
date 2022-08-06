@@ -6,11 +6,12 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
-    def create # Атрибуты емайл и контакт запарещенные, необходимо их разрешить
+    def create
       @article = Article.new(article_params)
         if @article.valid?
          @article.save
-         redirect_to @article
+         redirect_to @article  #  если использовать Редирект - то  вывод представления из create  отображатьсяя не будет
+         # будет делаться редирект на роутер SHOW - файл Креате можно удалить с редиректом он не используется
       else
         render action: 'new'
       end

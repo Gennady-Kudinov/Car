@@ -1,5 +1,3 @@
-
-
 <%= form_for :client, data: { turbo: false }, url: clients_path do |f| %>
 
 
@@ -31,19 +29,10 @@
 
   <div class="hstack gap-3" style="height: 100px;">
 
-    <div class="bg-light border ms-5"><%= f.label :date%><%= f.datetime_local_field :date %></div>
+    <div class="bg-light border ms-5"><%= f.label :data%><%= f.datetime_local_field :data %></div>
 
     <div class="bg-info col-form-label-lg"><%= f.submit %></div>
 
   </div>
 
-
 <% end %>
-
-      <% @brand_auto = params[:brand_auto] %>
-      <% @model_auto = params[:model_auto] %>
-      <% @number_auto = params[:number_auto] %>
-      <% @swid = params[:swid] %>
-
-      <% response = FileUtils.mkdir_p "E:/BAZA/#{params[:brand_auto]}/#{params[:model_auto]}/#{params[:number_auto]}" %>
-
