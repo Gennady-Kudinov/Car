@@ -3,7 +3,7 @@
 <!- обязательно добaвлять  data: { turbo: false } - так как изменились Релься, -->
 <!- иначе не будет отображаться результат на странице -->
 
-  <%= form_for :article, data: { turbo: false }, url: article_path(@article), method: :patch do |f| %>
+  <%= form_for :article, data: { turbo: false }, url: article_path(@article), method: :post do |f| %>
 
   <p>
     <%= f.label :title %>

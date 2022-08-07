@@ -26,8 +26,12 @@ Rails.application.routes.draw do
   get 'terms' => 'pages#terms'
   get 'about' => 'pages#about'
 
-  get "car/index"
-  resource :brands
+  #get 'brands' => 'brands#index'
+  get 'brands/new' => 'brands#new'
+  get 'brands/new' => 'brands#create'
+  get 'brands' => 'brands#index'
+  resource :brands, only: [:new, :create, :update, :edit]
+  resources :clients
 
 
 end

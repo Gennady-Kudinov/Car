@@ -1,0 +1,18 @@
+<h1>Новые Бренды</h1>
+
+<!- обязательно добaвлять  data: { turbo: false } - так как изменились Релься, -->
+<!- иначе не будет отображаться результат на странице -->
+
+
+  <%= form_for :brand, data: { turbo: false }, url: brands_path(@brand) do |f| %>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit 'Ввод бренда' %>
+  </p>
+
+<% end %>
