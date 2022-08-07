@@ -41,11 +41,17 @@ app/assets/images/IMG_1.jpg
 app/assets/images/location.jpg
 bootstrap/
 
-public/location.jpg
-public/location.jpg
-public/location.jpg
-public/location.jpg
+app/assets/images/location.jpg
+app/assets/images/location.jpg
+app/assets/images/location.jpg
+app/assets/images/location.jpg
 node_modules/*
 public/p.jpg
 app/assets/images/img_foto.jpg
 BAZA/database.txt
+/**/BAZA/*
+public/location.jpg
+BAZA/database.txt
+BAZA/DAIHATSU/56789/456/456.html
+BAZA/CHANGAN/.html
+BAZA/AUDI/.html

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get '/' => 'home#index' # Метод вызывает открытия главную страницу без папок
-  get '/contact' => 'static_pages#contact'  # Метод открывает контакты и адрес автосервиса из папки static_pages
+  get '/contact' => 'pages#contact'  # Метод открывает контакты и адрес автосервиса из папки static_pages
   get 'home/index'
 
   get 'clients' => 'clients#new' # Методо возвращает форму заполнения после ее ввода
@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   get 'articles' => 'articles#new'
   resource :articles, only: [:new, :create]
 
+  get 'terms' => 'pages#terms'
+  get 'about' => 'pages#about'
 
   get "car/index"
   resources :brands
