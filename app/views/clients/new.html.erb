@@ -1,5 +1,15 @@
 <%= form_for :client, data: { turbo: false }, url: clients_path do |f| %>
 
+  <!-  # вывод сообщения об ошибке -->
+  <% if @client && @client.errors.any? %>
+    <p>
+    <ul>
+      <%= @client.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+    </p>
+  <% end %>
 
   <div class="hstack gap-3" style="height: 100px;">
 

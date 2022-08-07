@@ -9,21 +9,23 @@ Rails.application.routes.draw do
   get 'home/index'
 
   get 'clients' => 'clients#new' # Методо возвращает форму заполнения после ее ввода
-  get '/add_brands' => 'add_brands#new'
 
   # resource это такой метод который делает маршрут по Path (патерну) Рест (REST) и в Патерне Рест так определено
   # что НЬЮ получает GET  Крейт получает POST
   get 'contacts' => 'contacts#new' # Можно заменить на resource :contacts, only: [:new, :create], path_names: { :new => '' }
-  resource :contacts, only: [:new, :create]
-  resources :contacts
+  resource :contacts, only: [:create]
+  resources :articles
   # а дальше идет хешь,  ONLY это ключ хеша, а значение этого Хеша Массив С символами :new, :create методов
   # которые хотим использовать :new, :create
   resources :clients, only: [:new, :create]
   resources :clients
 
   get 'articles' => 'articles#new'
-  resources :articles, only: [:new, :create]
-  resources :articles
+  resource :articles, only: [:new, :create]
+
+
+  get "car/index"
+  resources :brands
 
 
 end

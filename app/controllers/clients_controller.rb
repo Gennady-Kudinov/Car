@@ -1,12 +1,12 @@
 class ClientsController < ApplicationController
 
   def new
-
   end
 
   def create
     @client = Client.new(client_params)
-    if @client.save
+    if @client.valid?
+      @client.save
       response = FileUtils.mkdir_p "BAZA/#{client_params[:brand_auto]}/#{client_params[:model_auto]}/#{client_params[:number_auto]}"
 
       database_file = File.new('BAZA/database.txt', 'a+')
@@ -16,7 +16,8 @@ class ClientsController < ApplicationController
       id_client = File.new("BAZA/#{client_params[:brand_auto]}/#{client_params[:model_auto]}/#{client_params[:number_auto]}/#{client_params[:number_auto]}.html", 'a+')
       id_client.puts "<body>#{client_params[:number_auto]} #{client_params[:brand_auto]} #{client_params[:model_auto]} #{client_params[:km]}км. Тип ЭБУ #{client_params[:swid]}: Сумма #{client_params[:price]} Телефон #{client_params[:phone]} Дата #{client_params[:data]}<br />#{client_params[:deffect]}<br /><body>"
       id_client.close
-
+        else
+          render action: 'new'
     end
   end
 

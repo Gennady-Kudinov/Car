@@ -1,0 +1,19 @@
+
+<%= form_with do |f| %>
+
+  <div class="hstack gap-3" style="height: 100px;">
+
+    <%= f.collection_select :name_id, Brand.order(:name), :id, :name %>
+
+        <% if Model.order(:name) %>
+
+        <%= f.collection_select :name_id, Model.order(:name), :id, :name %>
+
+        <% end %>
+
+    <div class="bg-info col-form-label-lg"><%= f.submit %></div>
+
+    </div>
+
+<% end %>
+

@@ -1,20 +1,9 @@
-<h1>Новая статья</h1>
+<h1>Редактирование статьи</h1>
 
 <!- обязательно добaвлять  data: { turbo: false } - так как изменились Релься, -->
 <!- иначе не будет отображаться результат на странице -->
 
-<%= form_for :article, data: { turbo: false }, url: articles_path do |f| %>
-
-  <!-  # вывод сообщения об ошибке -->
-  <% if @article && @article.errors.any? %>
-    <p>
-    <ul>
-      <%= @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-    </p>
-  <% end %>
+  <%= form_for :article, data: { turbo: false }, url: article_path(@article), method: :patch do |f| %>
 
   <p>
     <%= f.label :title %>
