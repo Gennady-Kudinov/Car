@@ -49,7 +49,7 @@ node_modules/*
 public/p.jpg
 app/assets/images/img_foto.jpg
 BAZA/database.txt
-/**/BAZA/*
+BAZA/*
 public/location.jpg
 BAZA/database.txt
 BAZA/DAIHATSU/56789/456/456.html
