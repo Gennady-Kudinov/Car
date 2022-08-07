@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
 
   get "car/index"
-  resources :brands
+  resource :brands
 
 
 end
