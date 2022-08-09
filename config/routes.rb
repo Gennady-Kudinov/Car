@@ -33,5 +33,4 @@ Rails.application.routes.draw do
   resource :brands, only: [:new, :create, :update, :edit]
   resources :clients
 
-
 end

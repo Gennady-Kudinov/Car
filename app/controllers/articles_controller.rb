@@ -25,8 +25,6 @@ class ArticlesController < ApplicationController
     # И передать ей все ее свойства, только после этого сущьность можно изменить. Представление edit.html.erb
   end
 
-
-
   def update
     @article = Article.find(params[:id])
     if @article.update(article_params)
@@ -37,14 +35,19 @@ class ArticlesController < ApplicationController
     end
   end
 
-
-
   # все что ниже Приватного метода не имеет доступа из вне.
   # Далее идет разрешение доступа к запретным атрибутам емайл и контакт
   private
 
   def article_params
     params.require(:article).permit(:title, :text)
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    redirect_to articles_path
   end
 
 end
