@@ -3,6 +3,28 @@
 //noinspection CssUnknownTarget
 @import 'bootstrap-icons/font/bootstrap-icons';
 
+@import "theme.css";
+@import "http://fonts.googleapis.com/css?family=Droid+Sans";
+@import url(theme);
+@import "landscape" screen and (orientation: landscape);
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+$utilities: map-merge(
+                $utilities, (
+                "border": map-merge(
+                                map-get($utilities, "border"),
+                                ( responsive: true ),
+                ),
+        )
+);
+
+@import "bootstrap/scss/utilities/api";
+
 
 
 .field_with_errors input,

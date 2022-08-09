@@ -9,7 +9,7 @@
 
   <nav class="navbar navbar-expand-lg bg-secondary p-3">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/clients/">
         <img src="/car/app/assets/images/Foto.jpg" alt="" width="30" height="24">
         Программа учета клиентов
       </a>
@@ -17,15 +17,16 @@
 
       <div class="container-fluid">
         <a class="navbar-brand text-light" href="/">Панель навигации</a>
+        <a class="navbar-brand text-light" aria-current="page" href="/articles">Вывод Статьи</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Переключатель навигации">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active text-light" aria-current="page" href="/articles">Список статей</a>
-            <a class="nav-link text-light" href="/clients">Ввод клиентов</a>
+            <a class="nav-link active text-light" aria-current="page" href="/articles">Статьи</a>
+            <a class="nav-link text-light" href="/clients">Клиенты</a>
             <a class="nav-link text-light" href="/brands">Бренды</a>
-            <a class="nav-link text-light" href="/brands/new">Ввод бренда</a>
+            <a class="nav-link text-light" href="/brands/new">Вводбренда</a>
             <a class="nav-link text-light" href="/contact">Контакты</a>
             <a class="nav-link text-light disabled">Отключенная</a>
             <a class="nav-link text-light disabled">Отключенная</a>
@@ -38,6 +39,9 @@
   <body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+
   <%= yield %>
   </body>
+
 </html>
