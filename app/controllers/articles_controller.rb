@@ -35,6 +35,13 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    redirect_to articles_path
+  end
+
   # все что ниже Приватного метода не имеет доступа из вне.
   # Далее идет разрешение доступа к запретным атрибутам емайл и контакт
   private
@@ -43,11 +50,6 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :text)
   end
 
-  def destroy
-    @article = Article.find(params[:id])
-    @article.destroy
 
-    redirect_to articles_path
-  end
 
 end

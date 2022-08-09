@@ -6,7 +6,7 @@
   <p>
     <%= link_to  "Показать статью", article_path(article) %> |
     <%= link_to  "Редактировать статью", edit_article_path(article) %> |
-    <%= link_to "Удалить", article_path(article), method: :delete, data: { confirm: 'Действительно удалить?'} %>
+    <%= button_to "Удалить", article_path(article), method: :delete, data: { confirm: 'Действительно удалить?'} %>
   </p>
   <hr>
   <% end %>

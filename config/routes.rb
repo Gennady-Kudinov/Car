@@ -14,14 +14,18 @@ Rails.application.routes.draw do
   # что НЬЮ получает GET  Крейт получает POST
   get 'contacts' => 'contacts#new' # Можно заменить на resource :contacts, only: [:new, :create], path_names: { :new => '' }
   resource :contacts, only: [:create]
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
   # а дальше идет хешь,  ONLY это ключ хеша, а значение этого Хеша Массив С символами :new, :create методов
   # которые хотим использовать :new, :create
   resources :clients, only: [:new, :create]
-  resources :clients
+  resources :clients do
+    resources :models
+  end
 
   get 'articles' => 'articles#new'
-  resource :articles, only: [:new, :create]
+  # resource :articles, only: [:new, :create]
 
   get 'terms' => 'pages#terms'
   get 'about' => 'pages#about'
