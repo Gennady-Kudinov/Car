@@ -6,6 +6,10 @@ class BrandsController < ApplicationController
   def new
   end
 
+  def show
+    @client = Client.find(params[:id])
+  end
+
   def create
     @brand = Brand.new(brand_params)
       @brand.save

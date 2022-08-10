@@ -3,6 +3,10 @@ class ClientsController < ApplicationController
   def new
   end
 
+  def show
+    @client = Client.find(params[:id])
+  end
+
   def create
     @client = Client.new(client_params)
     if @client.valid?
@@ -19,6 +23,11 @@ class ClientsController < ApplicationController
         else
           render action: 'new'
     end
+  end
+
+  def edit
+    @client = Client.find(params[:id]) # Для того что бы отредактировать , нужно получить Сущьность (переменная обьект)
+    # И передать ей все ее свойства, только после этого сущьность можно изменить. Представление edit.html.erb
   end
 
   private

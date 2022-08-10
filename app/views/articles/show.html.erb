@@ -1,11 +1,12 @@
-<h3>Вывод статьи</h3>
+<h3>Страница вывода текста статьи и автора</h3>
+<body class="Secondary" >
 
-<h1><%=@article.title %></h1>
-<p>
-  <%= @article.text %>
-</p>
-<p>
+<h2>
+  <p class="text-success" ><%= @article.title %></p>
+</h2>
+  <p class="text-dark"><%= @article.text %></p>
 
+</body>
 
 <!- обязательно добaвлять  data: { turbo: false } - так как изменились Релься, -->
 <!- иначе не будет отображаться результат на странице -->

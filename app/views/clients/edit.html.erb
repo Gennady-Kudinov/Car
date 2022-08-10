@@ -1,0 +1,22 @@
+<h1>Редактирование статьи</h1>
+
+<!- обязательно добaвлять  data: { turbo: false } - так как изменились Релься, -->
+<!- иначе не будет отображаться результат на странице -->
+
+  <%= form_for :client, data: { turbo: false }, url: client_path(@client), method: :put do |f| %>
+
+  <p>
+    <%= f.label :number_auto %>
+    <%= f.text_field :number_auto %>
+  </p>
+
+  <p>
+    <%= f.label :brand_auto %>
+    <%= f.text_area :brand_auto %>
+  </p>
+
+  <p>
+    <%= f.submit 'Send message' %>
+  </p>
+
+<% end %>
