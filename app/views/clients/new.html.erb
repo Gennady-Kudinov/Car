@@ -13,39 +13,43 @@
 
   <div class="hstack gap-3" style="height: 100px;">
 
-    <div class="bg-light border ms-5"><%= f.label :number_auto %><br><%= f.text_field :number_auto %></div>
+    <div class="bg-light border ms-5"><%= f.label :number_auto, 'Гос Номер а/м' %><br><%= f.text_field :number_auto %></div>
 
-    <div class="bg-light border ms-auto-3"><%= f.label :brand_auto %><br><%= f.select :brand_auto, ["AUDI", "ACURA", "BMW", "BYD", "CHEVROLET", "CHERY", "CITROEN", "CHANGAN", "CHRYSLER", "DAEWOO", "DODGE", "DAIHATSU", "DATSUN", "DONGFENG", "FORD", "FIAT", "FAW", "FOTON", "INFINITI", "ISUZU", "JAC", "GEELY", "GENESIS", "GREATWALL", "GAC", "HAVAL", "HONDA", "HYUNDAI", "HAIMA", "KIA", "LEXUS", "LIFAN", "MAZDA", "MINI", "MITSUBISHI", "MERCEDESBENZ",  "NISSAN", "OPEL", "PEUGEOT", "RAVON", "RENAULT", "ROVER", "SEAT", "SKODA",  "SSANGYONG", "SUZUKI", "SUBARU", "SMART", "TOYOTA", "VOLKSWAGEN", "VOLVO", "UAZ", "VAZ", "ZAZ", "GAZ"] %></div>
+    <div class="bg-light border ms-auto-3"><%= f.label :brand_auto, 'Бренд а/м' %><br><%= f.select :brand_auto, ["AUDI", "ACURA", "BMW", "BYD", "CHEVROLET", "CHERY", "CITROEN", "CHANGAN", "CHRYSLER", "DAEWOO", "DODGE", "DAIHATSU", "DATSUN", "DONGFENG", "FORD", "FIAT", "FAW", "FOTON", "INFINITI", "ISUZU", "JAC", "GEELY", "GENESIS", "GREATWALL", "GAC", "HAVAL", "HONDA", "HYUNDAI", "HAIMA", "KIA", "LEXUS", "LIFAN", "MAZDA", "MINI", "MITSUBISHI", "MERCEDESBENZ",  "NISSAN", "OPEL", "PEUGEOT", "RAVON", "RENAULT", "ROVER", "SEAT", "SKODA",  "SSANGYONG", "SUZUKI", "SUBARU", "SMART", "TOYOTA", "VOLKSWAGEN", "VOLVO", "UAZ", "VAZ", "ZAZ", "GAZ"] %></div>
 
-    <div class="bg-light border ms-auto-3"><%= f.label :model_auto %><br><%= f.text_field :model_auto %></div>
+    <div class="bg-light border ms-auto-3"><%= f.label :model_auto, 'Модель а/м' %><br><%= f.text_field :model_auto %></div>
 
-    <div class="bg-light border ms-auto-3"><%= f.label :km%><br><%= f.text_field :km %></div>
+    <div class="bg-light border ms-auto-3"><%= f.label :km, 'Пробег в км' %><br><%= f.text_field :km %></div>
 
-    <div class="bg-light border ms-auto-3"><%= f.label :vin%><br><%= f.text_field :vin %></div>
+    <div class="bg-light border ms-auto-3"><%= f.label :vin, 'Вин номер' %><br><%= f.text_field :vin %></div>
 
   </div>
 
   <div class="hstack gap-3">
 
-    <div class="bg-light border ms-5"><%= f.label :deffect%><br><%= f.text_area :deffect, size: "61x10" %></div>
+    <div class="bg-light border ms-5"><%= f.label :deffect, 'Жалобы клиента на работу а/м, результат диагностики'%><br><%= f.text_area :deffect, size: "55x10" %></div>
 
-    <div class="bg-light border ms-auto-3"><%= f.label :swid%><br><%= f.text_field :swid %></div>
-
-    <div class="bg-light border ms-auto-3"><%= f.label :phone%><br><%= f.text_field :phone %></div>
-
-
+    <div class="bg-light border ms-5"><%= f.label :remont, 'Проделанная работа и пр.' %><br><%= f.text_area :deffect, size: "55x10" %></div>
 
   </div>
 
   <div class="hstack gap-3" style="height: 100px;">
 
-    <div class="bg-light border ms-5"><%= f.label :data%><%= f.datetime_local_field :data %></div>
+    <div class="bg-light border ms-5"><%= f.label :swid, 'Тип блока, номер софта' %><br><%= f.text_field :swid %></div>
 
-    <div class="bg-info col-form-label-lg"><%= f.submit %></div>
+    <div class="bg-light border ms-auto-3"><%= f.label :phone, 'Номер телефона' %><br><%= f.text_field :phone %></div>
+
+    <div class="bg-light border ms-auto-3"><%= f.label :price, 'Стоимость работ' %><br><%= f.text_field :price %></div>
+
+    <div class="bg-light border ms-auto-3"><%= f.label :data, 'Дата и время'%><%= f.datetime_local_field :data %></div>
+
+  </div>
+
+  <div class="hstack gap-3" style="height: 100px;">
+
+    <div class="bg-info ms-5 col-form-label-md"><%= f.label :submit, 'Записать' %><%= f.submit %></div>
 
     <%= link_to 'Показать все записи а/м', clients_path %>
-
-    <div class="bg-light border ms-auto-3"><%= f.label :price%><br><%= f.text_field :price %></div>
 
   </div>
 
