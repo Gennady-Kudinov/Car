@@ -1,16 +1,17 @@
 <h1>Вывод записаного клиента</h1>
 
     <tr>
-      <p class="text-success"><%= @client.number_auto %></p>
-      <p class="text-dark"><%= @client.model_auto %></p>
-      <p class="text-dark"><%= @client.brand_auto %></p>
-      <p class="text-dark"><%= @client.km %></p>
-      <p class="text-dark"><%= @client.deffect %></p>
-      <p class="text-dark"><%= @client.vin %></p>
-      <p class="text-dark"><%= @client.swid %></p>
-      <p class="text-dark"><%= @client.phone %></p>
-      <p class="text-dark"><%= @client.price %></p>
-      <p class="text-dark"><%= @client.data %></p>
+      <p class="text-danger"> Гос номер а/м || <%= @client.number_auto %></p>
+      <p class="text-dark">Бренд а/м || <%= @client.brand_auto %></p>
+      <p class="text-dark"> Модель а/м || <%= @client.model_auto %></p>
+      <p class="text-dark"> Пробег а/м || <%= @client.km %></p>
+      <p class="text-dark"> Жалобы владельца а/м || <%= @client.deffect %></p>
+      <p class="text-dark"> Проделанные работы на а/м || <%= @client.repair %></p>
+      <p class="text-dark"> Вин номер а/м || <%= @client.vin %></p>
+      <p class="text-dark"> Тип блока и версия софта эбу || <%= @client.swid %></p>
+      <p class="text-dark"> Телефон владельца а/м || <%= @client.phone %></p>
+      <p class="text-dark"> Стоимость услуг || <%= @client.price %></p>
+      <p class="text-dark"> Дата и время обращения || <%= @client.data %></p>
     </tr>
 
 

@@ -7,6 +7,7 @@ class CreateClients < ActiveRecord::Migration[7.0]
       t.integer :km
       t.string :vin
       t.text :deffect
+      t.text :repair
       t.string :swid
       t.string :phone
       t.integer :price

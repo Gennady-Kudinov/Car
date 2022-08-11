@@ -5,24 +5,32 @@
 
   <table class="table table-bordered border-primary">
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Автор---</th>
-      <th scope="col">Название ---- статьи</th>
+      <th scope="col">№</th>
+      <th scope="col">Гос Номе а/м</th>
+      <th scope="col">Бренд а/м</th>
+      <th scope="col">Модель а/м</th>
+      <th scope="col">Пробег в км</th>
+      <th scope="col">Тип эбу версия софта</th>
+      <th scope="col">Номер телефона</th>
     </tr>
     </thead>
 
     <tbody class="table-group-divider" class="align-top">
     <tr>
       <th scope="row">1</th>
-      <td><p><%= client.number_auto %></p></td>
-      <td><p><%= client.brand_auto %></p></td>
+      <td><p class="text-danger"><%= client.number_auto %></p></td>
+      <td><p class="text-success"><%= client.brand_auto %></p></td>
+      <td><p class="text-success"><%= client.model_auto %></p></td>
+      <td><p class="text-success"><%= client.km %></p></td>
+      <td><p class="text-success"><%= client.swid %></p></td>
+      <td><p class="text-success"><%= client.phone %></p></td>
     </tr>
   </table>
 
       <p>
-        <%= link_to  "Показать статью", client_path(client) %> |
-        <%= link_to  "Редактировать статью", edit_client_path(client) %> |
-        <%= button_to "Удалить", client_path(client), method: :delete, data: { confirm: 'Действительно удалить?'} %>
+        <%= link_to  "Показать клиента", client_path(client) %> |
+        <%= link_to  "Редактировать данные клиента", edit_client_path(client) %> |
+        <%= button_to "Удалить запись клиента", client_path(client), method: :delete, data: { confirm: 'Действительно удалить?'} %>
       </p>
 
   <% end %>

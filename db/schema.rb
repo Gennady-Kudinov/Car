@@ -31,6 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_162933) do
     t.integer "km"
     t.string "vin"
     t.text "deffect"
+    t.text "repair"
     t.string "swid"
     t.string "phone"
     t.integer "price"
