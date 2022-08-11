@@ -1,6 +1,17 @@
-<h1><%=@client.number_auto %></h1>
-<p>
-  <%= @client.model_auto %>
-  <%= @client.brand_auto %>
-  <%= @client.deffect %>
-</p>
+<h1>Вывод записаного клиента</h1>
+
+    <tr>
+      <p class="text-success"><%= @client.number_auto %></p>
+      <p class="text-dark"><%= @client.model_auto %></p>
+      <p class="text-dark"><%= @client.brand_auto %></p>
+      <p class="text-dark"><%= @client.km %></p>
+      <p class="text-dark"><%= @client.deffect %></p>
+      <p class="text-dark"><%= @client.vin %></p>
+      <p class="text-dark"><%= @client.swid %></p>
+      <p class="text-dark"><%= @client.phone %></p>
+      <p class="text-dark"><%= @client.price %></p>
+      <p class="text-dark"><%= @client.data %></p>
+    </tr>
+
+
+

@@ -3,6 +3,10 @@ class ClientsController < ApplicationController
   def new
   end
 
+  def index
+    @clients = Client.all
+  end
+
   def show
     @client = Client.find(params[:id])
   end
@@ -20,6 +24,9 @@ class ClientsController < ApplicationController
       id_client = File.new("BAZA/#{client_params[:brand_auto]}/#{client_params[:model_auto]}/#{client_params[:number_auto]}/#{client_params[:number_auto]}.html", 'a+')
       id_client.puts "<body>#{client_params[:number_auto]} #{client_params[:brand_auto]} #{client_params[:model_auto]} #{client_params[:km]}км. Тип ЭБУ #{client_params[:swid]}: Сумма #{client_params[:price]} Телефон #{client_params[:phone]} Дата #{client_params[:data]}<br />#{client_params[:deffect]}<br /><body>"
       id_client.close
+
+      redirect_to @client
+
         else
           render action: 'new'
     end
@@ -28,6 +35,23 @@ class ClientsController < ApplicationController
   def edit
     @client = Client.find(params[:id]) # Для того что бы отредактировать , нужно получить Сущьность (переменная обьект)
     # И передать ей все ее свойства, только после этого сущьность можно изменить. Представление edit.html.erb
+  end
+
+  def update
+    @client = Client.find(params[:id])
+    if @client.update(client_params)
+      redirect_to @client  #  если использовать Редирект - то  вывод представления из create  отображатьсяя не будет
+      # будет делаться редирект на роутер SHOW - файл Креате можно удалить с редиректом он не используется
+    else
+      render action: 'edit'
+    end
+  end
+
+  def destroy
+    @client = Client.find(params[:id])
+    @client.destroy
+
+    redirect_to clients_path
   end
 
   private

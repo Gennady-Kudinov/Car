@@ -15,7 +15,7 @@
     <tr>
       <th scope="row">1</th>
       <td><p><%= article.title %></p></td>
-      <td><p><%= article.title %></p></td>
+      <td><p><%= article.text %></p></td>
     </tr>
   </table>
 
@@ -24,7 +24,6 @@
         <%= link_to  "Редактировать статью", edit_article_path(article) %> |
         <%= button_to "Удалить", article_path(article), method: :delete, data: { confirm: 'Действительно удалить?'} %>
       </p>
-      <hr>
   <% end %>
 </body>
 
