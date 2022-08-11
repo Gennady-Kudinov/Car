@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
   # а дальше идет хешь,  ONLY это ключ хеша, а значение этого Хеша Массив С символами :new, :create методов
   # которые хотим использовать :new, :create
+  get 'search' => 'clients#search'
   get 'clients' => 'clients#index' # Методо возвращает форму заполнения после ее ввода
   resources :clients, only: [:new, :create, :show]
   resources :clients

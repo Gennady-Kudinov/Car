@@ -11,6 +11,13 @@ class ClientsController < ApplicationController
     @client = Client.find(params[:id])
   end
 
+  def search
+    @client = Client.where("number_auto = ?", params[:number_auto])
+    if @client_params == :number_auto
+      redirect_to @client[id]
+    end
+  end
+
   def create
     @client = Client.new(client_params)
     if @client.valid?
