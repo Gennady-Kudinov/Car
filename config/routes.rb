@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   # которые хотим использовать :new, :create
   get 'search' => 'clients#search'
   get 'clients' => 'clients#index' # Методо возвращает форму заполнения после ее ввода
-  # resources :clients, only: [:new, :create, :show]
+
   resources :clients
   resources :clients do
     resources :models
@@ -32,10 +32,10 @@ Rails.application.routes.draw do
   get 'terms' => 'pages#terms'
   get 'about' => 'pages#about'
 
-  get 'brands/show' => 'brands#show'
-  get 'brands/new' => 'brands#new'
-  get 'brands/new' => 'brands#create'
-  get 'brands' => 'brands#index'
+ get 'brands' => 'brands#index'
+  resources :brands do
+    resources :models
+  end
   resources :brands
 
 end

@@ -1,20 +1,32 @@
+<h2>Список Брендов</h2>
+<body>
 
-<%= form_with do |f| %>
+  <% @brands.each do |brand| %>
 
-  <div class="hstack gap-3" style="height: 100px;">
+  <table class="table table-bordered border-primary">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Бранд</th>
+    </tr>
+    </thead>
 
-    <%= f.collection_select :name_id, Brand.order(:name), :id, :name %>
+    <tbody class="table-group-divider" class="align-top">
+    <tr>
+      <th scope="row">1</th>
+      <td><p class="text-danger"><%= brand.name %></p></td>
+    </tr>
+  </table>
 
-        <% if Model.order(:name) %>
+      <p>
+        <%= link_to  "Добавить Модель для Бренда", brand_path(brand) %> |
+        <%= link_to  "Редактировать Бренд", edit_brand_path(brand) %> |
+        <%= button_to "Удалить Бранд", brand_path(brand), method: :delete, data: { confirm: 'Действительно удалить?'} %>
+      </p>
+  <% end %>
+</body>
 
-        <%= f.collection_select :name_id, Model.order(:name), :id, :name %>
 
-        <% end %>
 
-    <div class="bg-info col-form-label-lg"><%= f.submit %></div>
 
-    </div>
-
-<% end %>
 
 

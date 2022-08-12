@@ -1,18 +1,28 @@
-<h1>Новые Бренды</h1>
+<h3>Введите Новый Бренд</h3>
 
 <!- обязательно добaвлять  data: { turbo: false } - так как изменились Релься, -->
 <!- иначе не будет отображаться результат на странице -->
 
+<%= form_for :brand, data: { turbo: false }, url: brands_path do |f| %>
 
-  <%= form_for :brand, data: { turbo: false }, url: brands_path(@brand) do |f| %>
+  <!-  # вывод сообщения об ошибке -->
+  <% if @brand && @brand.errors.any? %>
+    <p>
+    <ul>
+      <%= @brand.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+    </p>
+  <% end %>
 
   <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.label :name, 'Название Бренда' %>
+    <%= f.text_area :name %>
   </p>
 
   <p>
-    <%= f.submit 'Ввод бренда' %>
+    <%= f.submit 'Сохранить' %>
   </p>
 
 <% end %>

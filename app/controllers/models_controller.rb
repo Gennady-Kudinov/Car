@@ -1,7 +1,7 @@
 class ModelsController < ApplicationController
   def create
     @brand = Brand.find(params[:brand_id])
-    @brand.models.create(models_params)
+    @brand.models.create(model_params)
 
     redirect_to brand_path(@brand)
   end

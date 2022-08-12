@@ -1,29 +1,28 @@
-<h3>Страница вывода Бренда и модели></h3>
+<h4>Бренд для которого вы будете добавлять модель а/м</h4>
 <body class="Secondary" >
 
 <h2>
   <p class="text-success" ><%= @brand.name %></p>
 </h2>
-  <p class="text-dark"><%= @brand.name %></p>
 
-<h2>Комментарии</h2>
+<p class="text-grey"> Уже записаны следующие модели для Бренда <%= @brand.name %></p>
 
 <% @brand.models.each do |model| %>
 <p>
-  <i><%= model.name %></i><br />
+  <i class="text-danger"><%= model.name %></i><br />
 </p>
 <% end %>
 
-<h2>Добавить Комментарий</h2>
+<h4>Добавьте для этого бренда модель а/м принадлежащую бренду</h4>
 <p>
   <%= form_for([@brand, @brand.models.build]) do |f| %>
 
-  <p class="text-success" ><%= f.label :name %><br />
+  <p class="text-danger" ><%= f.label :name, 'Модель а/м (Марка)' %><br />
   <p class="text-success" ><%= f.text_field :name %><br />
 </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit 'Сохранить' %>
   </p>
 </body>
 

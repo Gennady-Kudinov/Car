@@ -1,0 +1,17 @@
+<h1>Редактирование Бренда</h1>
+
+<!- обязательно добaвлять  data: { turbo: false } - так как изменились Релься, -->
+<!- иначе не будет отображаться результат на странице -->
+
+  <%= form_for :brand, data: { turbo: false }, url: brand_path(@brand), method: :put do |f| %>
+
+  <p>
+    <%= f.label :name, 'Введите название бренда' %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit 'Сохранить' %>
+  </p>
+
+<% end %>
