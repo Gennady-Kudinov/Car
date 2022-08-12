@@ -1,0 +1,30 @@
+<h3>Страница вывода Бренда и модели></h3>
+<body class="Secondary" >
+
+<h2>
+  <p class="text-success" ><%= @brand.name %></p>
+</h2>
+  <p class="text-dark"><%= @brand.name %></p>
+
+<h2>Комментарии</h2>
+
+<% @brand.models.each do |model| %>
+<p>
+  <i><%= model.name %></i><br />
+</p>
+<% end %>
+
+<h2>Добавить Комментарий</h2>
+<p>
+  <%= form_for([@brand, @brand.models.build]) do |f| %>
+
+  <p class="text-success" ><%= f.label :name %><br />
+  <p class="text-success" ><%= f.text_field :name %><br />
+</p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+</body>
+
+<% end %>

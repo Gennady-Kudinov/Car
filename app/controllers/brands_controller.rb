@@ -7,7 +7,7 @@ class BrandsController < ApplicationController
   end
 
   def show
-    @client = Client.find(params[:id])
+    @brand = Brand.find(params[:id])
   end
 
   def create
@@ -17,6 +17,8 @@ class BrandsController < ApplicationController
       render action: 'new'
     end
   end
+
+  private
 
   def brand_params
     params.require(:brand).permit(:name)

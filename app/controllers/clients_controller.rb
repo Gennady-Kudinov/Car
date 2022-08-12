@@ -14,7 +14,7 @@ class ClientsController < ApplicationController
   def search
     @client = Client.where("number_auto = ?", params[:number_auto])
     if @client_params == :number_auto
-      redirect_to @client[id]
+      redirect_to @client.params[id]
     end
   end
 
