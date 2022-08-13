@@ -17,13 +17,16 @@
     </tr>
   </table>
 
-      <p>
-        <%= link_to  "Добавить Модель для Бренда", brand_path(brand) %> |
-        <%= link_to  "Редактировать Бренд", edit_brand_path(brand) %> |
-        <%= button_to "Удалить Бранд", brand_path(brand), method: :delete, data: { confirm: 'Действительно удалить?'} %>
-      </p>
-  <% end %>
+
+    <p>
+      <%= button_to  "Добавить Модель для Бренда", brand_path(brand), method: :get %>
+      <%= button_to  "Редактировать Бренд", edit_brand_path(brand), method: :get %>
+      <%= button_to "Удалить Бранд", brand_path(brand), method: :delete, data: { confirm: 'Действительно удалить?'} %>
+    </p>
+<% end %>
+
 </body>
+
 
 
 

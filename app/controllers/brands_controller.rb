@@ -14,7 +14,7 @@ class BrandsController < ApplicationController
   def create
     @brand = Brand.new(brand_params)
     if @brand.save
-      redirect_to @brand #  если использовать Редирект - то  вывод представления из create  отображатьсяя не будет
+      render action: 'new' #  если использовать Редирект - то  вывод представления из create  отображатьсяя не будет
       # будет делаться редирект на роутер SHOW - файл Креате можно удалить с редиректом он не используется
     else
       render action: 'new'
