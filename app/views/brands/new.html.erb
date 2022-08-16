@@ -5,20 +5,20 @@
 
 <%= form_for :brand, data: { turbo: false }, url: brands_path do |f| %>
 
-  <!-  # вывод сообщения об ошибке -->
+ <!-  вывод сообщения об ошибке -->
   <% if @brand && @brand.errors.any? %>
     <p>
-    <ul>
-      <%= @brand.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
+      <ul>
+        <%= @brand.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
     </p>
   <% end %>
 
   <p>
     <%= f.label :name, 'Название Бренда' %>
-    <%= f.text_area :name %>
+    <%= f.text_field :name %>
   </p>
 
   <p>

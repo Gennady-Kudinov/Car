@@ -29,7 +29,7 @@ class ClientsController < ApplicationController
       database_file.close
 
       id_client = File.new("BAZA/#{client_params[:brand_auto]}/#{client_params[:model_auto]}/#{client_params[:number_auto]}/#{client_params[:number_auto]}.html", 'a+')
-      id_client.puts "<body>#{client_params[:number_auto]} #{client_params[:brand_auto]} #{client_params[:model_auto]} #{client_params[:km]}км. Тип ЭБУ #{client_params[:swid]}: Сумма #{client_params[:price]} Телефон #{client_params[:phone]} Дата #{client_params[:data]}<br />#{client_params[:deffect]}<br />#{client_params[:repair]}<br /><body>"
+      id_client.puts "<body>#{client_params[:number_auto]} #{client_params[:brand_auto]} #{client_params[:model_auto]} #{client_params[:km]}км. Тип ЭБУ #{client_params[:swid]}: Сумма #{client_params[:price]} Телефон #{client_params[:phone]} Дата #{client_params[:data]}<br />#{client_params[:problem_user]}<br />#{client_params[:repair_user]}<br /><body>"
       id_client.close
 
       redirect_to @client
@@ -64,7 +64,7 @@ class ClientsController < ApplicationController
   private
 
   def client_params
-    params.require(:client).permit(:number_auto, :brand_auto, :model_auto, :km, :vin, :deffect, :repair, :swid, :phone, :price, :data)
+    params.require(:client).permit(:number_auto, :brand_auto, :model_auto, :km, :vin, :problem_user, :repair_user, :swid, :phone, :price, :data)
   end
 
 end

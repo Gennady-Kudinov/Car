@@ -6,8 +6,8 @@ class CreateClients < ActiveRecord::Migration[7.0]
       t.string :model_auto
       t.integer :km
       t.string :vin
-      t.text :deffect
-      t.text :repair
+      t.text :problem_user
+      t.text :repair_user
       t.string :swid
       t.string :phone
       t.integer :price

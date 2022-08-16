@@ -7,6 +7,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Бранд</th>
+      <th scope="col"><%= button_to "Удалить Бранд", brand_path(brand), method: :delete %></th>
     </tr>
     </thead>
 
@@ -14,17 +15,13 @@
     <tr>
       <th scope="row">1</th>
       <td><p class="text-danger"><%= brand.name %></p></td>
+        <td>
+          <%= link_to  "Добавить Модель для Бренда", brand_path(brand), method: :get %> |
+          <%= link_to  "Редактировать Бренд", edit_brand_path(brand), method: :get %>
+        </td>
     </tr>
   </table>
-
-
-    <p>
-      <%= button_to  "Добавить Модель для Бренда", brand_path(brand), method: :get %>
-      <%= button_to  "Редактировать Бренд", edit_brand_path(brand), method: :get %>
-      <%= button_to "Удалить Бранд", brand_path(brand), method: :delete, data: { confirm: 'Действительно удалить?'} %>
-    </p>
 <% end %>
-
 </body>
 
 
