@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  resources :clients do
+    resources :problem_user
+  end
+
   get '/' => 'home#index' # Метод вызывает открытия главную страницу без папок
   get '/contact' => 'pages#contact'  # Метод открывает контакты и адрес автосервиса из папки static_pages
   get 'home/index'

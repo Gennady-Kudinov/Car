@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
 
   def new
+    @client = Client.new
   end
 
   def index
@@ -64,7 +65,7 @@ class ClientsController < ApplicationController
   private
 
   def client_params
-    params.require(:client).permit(:number_auto, :brand_auto, :model_auto, :km, :vin, :problem_user, :repair_user, :swid, :phone, :price, :data)
+    params.require(:client).permit(:number_auto, :brand_auto, :model_auto, :km, :vin, :problem_user, :repair_user, :swid, :phone, :price, :data, problem_user_attributes: [:each, :problem_user, :attribute])
   end
 
 end
