@@ -5,7 +5,11 @@ class ClientsController < ApplicationController
   end
 
   def index
-    @clients = Client.where(["number_auto LIKE?", "%#{params[:search]}%"])
+    #  Поиск клиента только по номеру авто с чистой таблицы
+    # @clients = Client.where(number_auto: params[:search])
+
+    #  Поиск клиента и таблицы всех клиентов
+      @clients = Client.where(["number_auto LIKE ?", "%#{params[:search]}%"])
   end
 
   def show

@@ -4,7 +4,7 @@ class ProblemUsersController < ApplicationController
   end
 
   def index
-    @problem_users = Client.all
+    @problem_user = ProblemUser.where(problem_users: params[:search])
   end
 
   def show
