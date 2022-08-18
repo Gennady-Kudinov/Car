@@ -5,7 +5,7 @@ class ClientsController < ApplicationController
   end
 
   def index
-    @clients = Client.all
+    @clients = Client.where(["number_auto LIKE?", "%#{params[:search]}%"])
   end
 
   def show
@@ -13,14 +13,11 @@ class ClientsController < ApplicationController
   end
 
   def search
-    @client = Client.where("number_auto = ?", params[:number_auto])
-    if @client_params == :number_auto
-      redirect_to @client.params[id]
-    end
   end
 
   def create
     @client = Client.new(client_params)
+    @params = params[:problem_user_attributes]
     if @client.valid?
       @client.save
       response = FileUtils.mkdir_p "BAZA/#{client_params[:brand_auto]}/#{client_params[:model_auto]}/#{client_params[:number_auto]}"

@@ -2,6 +2,7 @@
   "name": "app",
   "private": "true",
   "dependencies": {
+    "@nathanvda/cocoon": "^1.2.14",
     "@popperjs/core": "^2.11.5",
     "@rails/ujs": "^7.0.3-1",
     "bootstrap": "^5.2.0",

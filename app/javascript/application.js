@@ -8,3 +8,5 @@ import Turbolinks from "turbolinks"
 Rails.start()
 Turbolinks.start()
 
+
+//= require cocoon

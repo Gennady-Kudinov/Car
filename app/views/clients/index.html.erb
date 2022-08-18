@@ -1,4 +1,10 @@
-<h2>таблица Списка клиентов</h2>
+<h3>таблица Списка клиентов</h3>
+
+<%= form_tag clients_path, :method => 'get' do %>
+  <p> Введите номер автомобиля для поиска</p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Поиск" %>
+  <% end %><br />
 
 
   <% @clients.each do |client| %>
