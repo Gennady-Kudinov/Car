@@ -12,9 +12,14 @@ class ProblemUsersController < ApplicationController
   end
 
   def create
-    @problem_user = Problem_user.new(params[:problem_user])
-    if @problem_user.valid?
-      @problem_user.save
+    #  @problem_user = Problem_user.new(params[:problem_user])
+    # if @problem_user.valid?
+    #  @problem_user.save
+
+      @client = Client.new(client_params)
+      @params = params[:problem_user_attributes]
+      if @client.valid?
+        @client.save
 
       redirect_to @problem_user
 
