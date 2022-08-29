@@ -8,8 +8,10 @@ class ClientsController < ApplicationController
     #  Поиск клиента только по номеру авто с чистой таблицы
     # @clients = Client.where(number_auto: params[:search])
 
-    #  Поиск клиента и таблицы всех клиентов
-     @clients = Client.where(["number_auto LIKE ?", "%#{params[:search]}%"])
+    #  вывод Поиск клиента и таблицы всех клиентов
+      
+     @clients = Client.where(["number_auto LIKE ?", "%#{params[:search]}%"]).order(created_at: :desc)
+     
   end
 
   def show
@@ -21,19 +23,23 @@ class ClientsController < ApplicationController
 
   def create
 
-    #  @obj1 = Model1.new model1_params @obj1.save @obj2 = Model2.new model2_params @obj2.save  #Проверить
+    #  @obj1 = Model1.new model1_params 
+    #  @obj1.save 
+    #  @obj2 = Model2.new
+    #  model2_params 
+    #  @obj2.save  #Проверить
 
     @client = Client.new(client_params)
     @params = params[:problem_user_attributes]
     if @client.valid?
       @client.save
-      response = FileUtils.mkdir_p "BAZA/#{client_params[:brand_auto]}/#{client_params[:model_auto]}/#{client_params[:number_auto]}"
+      response = FileUtils.mkdir_p "D:/BAZA/#{client_params[:brand_auto]}/#{client_params[:model_auto]}/#{client_params[:number_auto]}"
 
-      database_file = File.new('BAZA/database.txt', 'a+')
+      database_file = File.new('D:/BAZA/database.txt', 'a+')
       database_file.puts "#{client_params[:number_auto]}  #{client_params[:brand_auto]}  #{client_params[:model_auto]}  #{client_params[:km]}км.  Сумма #{client_params[:price]} Телефон #{client_params[:phone]} Дата #{client_params[:data]}"
       database_file.close
 
-      id_client = File.new("BAZA/#{client_params[:brand_auto]}/#{client_params[:model_auto]}/#{client_params[:number_auto]}/#{client_params[:number_auto]}.html", 'a+')
+      id_client = File.new("D:/BAZA/#{client_params[:brand_auto]}/#{client_params[:model_auto]}/#{client_params[:number_auto]}/#{client_params[:number_auto]}.html", 'a+')
       id_client.puts "<body>#{client_params[:number_auto]} #{client_params[:brand_auto]} #{client_params[:model_auto]} #{client_params[:km]}км. Тип ЭБУ #{client_params[:swid]}: Сумма #{client_params[:price]} Телефон #{client_params[:phone]} Дата #{client_params[:data]}<br />#{client_params[:problem_user]}<br />#{client_params[:repair_user]}<br /><body>"
       id_client.close
 
@@ -69,7 +75,7 @@ class ClientsController < ApplicationController
   private
 
   def client_params
-    params.require(:client).permit(:number_auto, :brand_auto, :model_auto, :km, :vin, :problem_user, :repair_user, :swid, :phone, :price, :data, problem_user_attributes: [:each, :problem_user, :attribute])
+    params.require(:client).permit(:number_auto, :brand_auto, :model_auto, :km, :vin, :problem_user, :repair_user, :swid, :phone, :price, :desc, :data, problem_user_attributes: [:each, :problem_user, :attribute])
   end
 
 end
